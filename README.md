@@ -31,11 +31,11 @@ LILLA includes:
  - n.9 Pushbuttons
 
  i/o interfaces:
- - micro-USB type-B (5V power supply - programming)
- - MIDI in (5-pin DIN)
- - line output (3.5mm stereo)
- - Headphones (3.5mm stereo)
- - micro-SD socket
+ - 5V power supply - programming (USB micro-B)
+ - MIDI in (jack 3.5mm stereo)
+ - line output (jack 3.5mm stereo)
+ - headphones (3.5mm stereo)
+ - microSD socket
 
 
  Dimensions
@@ -145,17 +145,7 @@ Sounds and Sessions are created by the user and edit using the context menu. LIL
 
  Settings backup/restore
  -----------------------
- All settings are stored in the Teensy EEPROM memory; LILLA allows to backup/restore all settings using a micro-SD card.
-
-
- LILLA and Teensy Audio library
- -----------------------
- LILLA's firmware widely uses Teensy libraries, adding its specific library (fully published and documented but not integrated in Teensy ecosystem). Some relevant and specific LILLA objects are:
- - Lilla_Player: 16 Lilla_Player objects read audio samples from memory areas, apply ADSR, downsampling and resolution filters, perform cross-mix and L/R panning; among all procedures, these objects host the most CPU-intensive and time-demanding processes;
- - Lilla_Trigger: 2 instances of this pseudo audio-object call Lilla_midi_reader 2 times per cycle (2.9ms);
- - Lilla_Midi_Reader: this not-audio-object guarantees maximum precedence to midi read and play processes, above all other processes; Midi_Reader object reads incoming midi messages and UIs requests and acts as centralized critical parameters change-point; besides Midi_Reader acts as orchestrator for the 16 voices, 16 VCF/LFOs, and the couple of Delay/LFOs providing them all metadata, checking their state, and arranging their activity:
-
- ![timing good](/pics/TIMING_GOOD.JPG)
+ All settings are stored in the Teensy EEPROM memory; LILLA allows to save/restore all settings using a microSD card.
 
 
  Credits
